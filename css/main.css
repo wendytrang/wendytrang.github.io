@@ -161,6 +161,7 @@ hr {
 h1 {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 0;
 }
 h2 {
     font-size: 22px;
@@ -177,12 +178,16 @@ h5 {
 h6 {
     font-size: 14px;
 }
+h7 {
+    font-size: 12px;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h7{
     font-family: 'Lekton', sans-serif;
     letter-spacing: 1.3pt;
     color: #111111;
@@ -429,6 +434,47 @@ ul.sublist {
     box-shadow: 200px 0 0 0 #56c8d4 inset;
     color: #fff;
 }
+
+/* =Nav Buttons
+-------------------------------------------------------------- */
+
+.btn-active {
+    color: rgb(156, 91, 91) !important;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#nav-side-buttons {
+    font-size: 2em;
+    line-height: .75em;
+    display: grid;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    z-index: 1;
+    top: 0;
+    right: .5em;
+    float: right;
+}
+
+#nav-side-buttons a {
+    text-decoration: none;
+    color: rgb(163, 162, 162);
+}
+
+#nav-side-buttons a:hover {
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+}
+
+#nav-side-buttons a:visited {
+    text-decoration: none;
+    font-size: 3em;
+}
+
 
 /* =Preloader
 -------------------------------------------------------------- */
@@ -1160,7 +1206,7 @@ span.border-text {
 .menu-wrap {
     position: fixed;
     z-index: 9999;
-    width: 35%;
+    width: 25%;
     height: 100%;
     right: 0;
     top: 0;
@@ -1781,6 +1827,171 @@ ul.client-thumb-2 li a img:hover{
 .portfolio-wrapper {
     clear: both;
 }
+/* START TEST MENU BUTTON */
+.nav-menu {
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: #fa8348;
+    cursor: pointer;
+    border: none;
+    width: 48px;
+    height: 48px;
+    float: right;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+.nav-menu:focus {
+    outline: none;
+}
+.nav-menu .icon-container {
+    width: 100%;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.nav-menu .line {
+    width: 26px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 2px;
+    background-color: #f3f3f3;
+    transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.nav-menu .line01 {
+    top: 0;
+    opacity: 1;
+    transition-delay: 210ms;
+}
+.nav-menu .line02 {
+    top: 7px;
+    transition-delay: 140ms;
+}
+.nav-menu .line03 {
+    top: 14px;
+    transition-delay: 70ms;
+}
+.nav-menu .line04 {
+    top: 21px;
+    opacity: 0;
+    transition-delay: 0ms;
+}
+.active .nav-menu .line {
+    left: 28px;
+}
+.nav-menu:hover .line {
+    -webkit-transform: translate3d(0, -7px, 0);
+    transform: translate3d(0, -7px, 0);
+}
+.nav-menu:hover .line01 {
+    opacity: 0;
+    transition-delay: 0ms;
+}
+.nav-menu:hover .line02 {
+    transition-delay: 70ms;
+}
+.nav-menu:hover .line03 {
+    transition-delay: 140ms;
+}
+.nav-menu:hover .line04 {
+    opacity: 1;
+    transition-delay: 210ms;
+}
+.opennav-menu .line {
+    transition: all 0.3s;
+}
+.open.nav-menu:hover .line {
+    -webkit-transform: none;
+    transform: none;
+}
+.open.nav-menu .line:nth-child(2) {
+    background: 0;
+}
+.open.nav-menu .line:nth-child(4) {
+    background: 0;
+}
+.open.nav-menu .line:nth-child(1) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 7px;
+    opacity: 1;
+}
+.open.nav-menu .line:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 7px;
+    opacity: 1;
+}
+.works-filter {
+    float: left;
+    line-height: 46px;
+    margin-bottom: 42px;
+}
+.works-filter a {
+    display: inline-block;
+    font-size: 18px;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: #111111;
+    font-weight: 300;
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+    opacity: 0;
+}
+.works-filter.open a {
+    opacity: 1;
+    transition: all 300ms cubic-bezier(.175, .885, .32, 1.075);
+}
+.works-filter.open a {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.works-filter.open a:nth-child(1) {
+    transition-duration: 600ms;
+}
+.works-filter.open a:nth-child(2) {
+    transition-duration: 400ms
+}
+.works-filter.open a:nth-child(3) {
+    transition-duration: 300ms
+}
+.works-filter.open a:nth-child(4) {
+    transition-duration: 200ms
+}
+.works-filter a.active {
+    color: #fa8348;
+}
+.works-filter a:before {
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #fa8348;
+}
+.works-filter a:first-child:before {
+    content: "  ";
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #fa8348;
+}
+#work-grid, #dribbble-portfolio {
+    clear: both;
+}
+.js-masonry {
+    height: 100% !important;
+    clear: both;
+}
+/* END TEST MENU BUTTON */
+
 /* Filter Button */
 .nav {
     -webkit-backface-visibility: hidden;
@@ -2356,6 +2567,44 @@ ul.social-buttons li {
     background: #f1f1f1;
     margin-top: 20px;
 }
+.btn-project-2 {
+    width: 100px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    border: 1px solid #f4f4f4;
+    font-size: 24px;
+}
+.btn-project-2 a:hover {
+    cursor: pointer;
+}
+.btn-project-2 a {
+    background: transparent;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+.btn-project-2:hover a:hover:before {
+    opacity: 1;
+    transform: translate(0, 0);
+    color: #111;
+    font-weight: 100;
+}
+.btn-project-2 a:before {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 800;
+    opacity: 0;
+    transform: translate(100%, 0);
+    transition: all .3s ease-in-out;
+    font-size: 10px;
+}
 .btn-project {
     width: 100px;
     height: 48px;
@@ -2402,29 +2651,6 @@ ul.social-buttons li {
     transition: all .3s ease-in-out;
     font-size: 10px;
     background: #fa8348;
-}
-
-/*Similar Project*/
-.similar-project {
-    clear: both;
-}
-.similar-project h4 {
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-
-/* Buttons home, back, next */
-.btn-project a:hover i {
-    opacity: 0;
-    transform: translate(100%, 0);
-}
-.btn-project a i {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 800;
-    font-size: .8em;
-    transition: all .3s ease-in-out;
 }
 
 /* =Blog
@@ -2728,9 +2954,89 @@ ul.social-buttons li {
     height: 69px;
     top: calc(50% - 36px);
 }
+
+/* =Test Contact
+-------------------------------------------------------------- */
+
+#contact {
+    text-align: center;
+    width: 100%;
+    height:95vh;
+    display: grid;
+}
+
+.contact-content {
+    width: 40%;
+    margin: auto;
+}
+
+#contact-form button {
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    background: rgb(70, 148, 131);
+    padding: 8px;
+    font-family: 'Ubuntu', serif;
+    font-size: .75em;
+    letter-spacing: .2em;
+    color: white;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+#contact-form button:hover {
+    background-color: #21433B;
+    color: rgb(151, 150, 148);
+}
+
+#contact-form button:active {
+    box-shadow: inset 0 0 3px white;
+}
+
+#contact-form {
+    width: 100%;
+    height:50%;
+}
+
+fieldset {
+    border: none;
+    padding: 0.5em;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+#contact-form input[type="text"], #contact-form input[type="email"], #contact-form input[type="submit"], #contact-form textarea {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #424242;
+}
+
+#contact-form input[type="text"]:hover, #contact-form input[type="email"]:hover, #contact-form input[type="submit"]:hover, #contact-form textarea:hover {
+    -webkit-transition: border-color 0.5s ease-in-out;
+    -moz-transition: border-color 0.5s ease-in-out;
+    transition: border-color 0.5s ease-in-out;
+    border: 1px solid black;
+}
+
+#message {
+    height: 150px;
+}
+
+input::placeholder {
+    font-size: .75em
+}
+
+textarea::placeholder {
+    font-size: .75em;
+}
+
 /* =Contact
 -------------------------------------------------------------- */
-.contact-map {
+/*.contact-map {
     position: relative;
     height: 450px;
 }
