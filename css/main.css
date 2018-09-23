@@ -2572,7 +2572,7 @@ ul.social-buttons li {
     height: 48px;
     text-align: center;
     line-height: 48px;
-    border: 1px solid #f4f4f4;
+    border: 2px solid #fa8348;
     font-size: 24px;
 }
 .btn-project-2 a:hover {
@@ -2588,7 +2588,7 @@ ul.social-buttons li {
 .btn-project-2:hover a:hover:before {
     opacity: 1;
     transform: translate(0, 0);
-    color: #111;
+    color: #fa8348;
     font-weight: 100;
 }
 .btn-project-2 a:before {
@@ -2970,7 +2970,7 @@ ul.social-buttons li {
     margin: auto;
 }
 
-#contact-form button {
+#contact button {
     cursor: pointer;
     width: 150px;
     border: none;
@@ -2984,12 +2984,12 @@ ul.social-buttons li {
     transition-duration: 0.5s;
 }
 
-#contact-form button:hover {
+#contact button:hover {
     background-color: #21433B;
     color: rgb(151, 150, 148);
 }
 
-#contact-form button:active {
+#contact button:active {
     box-shadow: inset 0 0 3px white;
 }
 
