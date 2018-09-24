@@ -345,7 +345,6 @@ ul.sublist {
 }
 
 
-
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -1827,6 +1826,43 @@ ul.client-thumb-2 li a img:hover{
 .portfolio-wrapper {
     clear: both;
 }
+/* persona */
+/*.persona {
+    color:rgb(250,131,72);
+}
+.persona:hover{
+    color:rgb(250,131,72);
+    cursor:pointer;
+    text-decoration:underline;
+    transition-duration: 0.5s;
+}
+
+#persona-pics img{
+    position:absolute;
+    display:inherit;
+}
+
+#personas{
+    left:10%;
+    top:15%;
+    width:40%;
+    display:inherit;
+}*/
+.persona_img {
+    cursor:pointer;
+}
+.persona_img a {
+    position:relative;
+}
+.persona_img a span {
+    position:absolute;
+    display:none;
+    z-index:99;
+}
+.persona_img a:hover span {
+    display:inline;
+    height:100px;
+}
 /* START TEST MENU BUTTON */
 .nav-menu {
     -webkit-backface-visibility: hidden;
@@ -2974,7 +3010,7 @@ ul.social-buttons li {
     cursor: pointer;
     width: 150px;
     border: none;
-    background: rgb(70, 148, 131);
+    background: rgb(250,131,72);
     padding: 8px;
     font-family: 'Ubuntu', serif;
     font-size: .75em;
@@ -2985,7 +3021,7 @@ ul.social-buttons li {
 }
 
 #contact button:hover {
-    background-color: #21433B;
+    background-color: #cccccc;
     color: rgb(151, 150, 148);
 }
 
